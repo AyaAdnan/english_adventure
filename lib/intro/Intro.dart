@@ -1,5 +1,7 @@
+import 'package:english_adventure/Login/body.dart';
 import 'package:flutter/material.dart';
 import 'Splash.dart';
+
 
 
 class Intro extends StatelessWidget{
@@ -20,7 +22,7 @@ class Intro extends StatelessWidget{
       ),
       routes: {
         'Load': (context){
-          return Load();
+          return Body();
         }
         ,
 
