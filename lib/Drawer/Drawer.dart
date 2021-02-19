@@ -1,9 +1,9 @@
+import 'package:english_adventure/note/callednote.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:english_adventure/Map/Map.dart';
-
 import 'MyDegree.dart';
-import 'MyNote.dart';
+
 
 
 
@@ -150,7 +150,7 @@ class _MyDrawerState extends State<MyDrawer> {
                 icon: Icon(Icons.note_add),
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return Mynote();
+                    return Notecalled();
                   }));
                 }
 
