@@ -41,8 +41,10 @@ class Body extends StatelessWidget {
                      child :CircleAvatar(
                      //child: Image.asset('lib/assets/boy.jpg',),
                      // backgroundColor: Colors.white70,
-
-                     child: IconButton(icon:Icon(Icons.camera_alt) ,),
+                       backgroundColor:Colors.white70 ,
+                     child: IconButton(icon:Icon(Icons.camera_alt,
+                     size: 30,
+                     ) ,),
                       radius: 70,
 
                    ),),
