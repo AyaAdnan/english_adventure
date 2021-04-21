@@ -1,4 +1,6 @@
 import 'package:english_adventure/Drawer/Drawer.dart';
+import 'package:english_adventure/game/game.dart';
+import 'package:english_adventure/quiz/screens/quiz/quiz_screen.dart';
 import 'package:flutter/material.dart';
 
 
@@ -229,17 +231,30 @@ class Iconbuilder extends StatelessWidget {
     }
 
     if(x=='Games'){
-      return Icon(Icons.games,
+      return IconButton(icon:Icon(Icons.games,
         size: 40,
         color: Colors.black54,
 
-      );
+      ), onPressed: (){
+        Navigator.push(context,MaterialPageRoute(builder: (context){
+          return Game();
+        }));
+      }) ;
     }
-    return Icon(Icons.class_
-    ,
-      size: 40,
-      color: Colors.black54,
+    return IconButton(
+      icon: Icon(Icons.class_
+      ,
+        size: 40,
+        color: Colors.black54,
 
+      ),
+      onPressed: (){
+
+        Navigator.push(context,MaterialPageRoute(builder: (context){
+          return QuizScreen();
+        }));
+
+      },
     );
 
   }

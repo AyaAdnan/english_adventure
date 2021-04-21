@@ -1,5 +1,6 @@
 import 'package:english_adventure/Login/body.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'Splash.dart';
 
 
@@ -8,7 +9,7 @@ class Intro extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
   
-    return MaterialApp(
+    return GetMaterialApp(
       theme: ThemeData(
         fontFamily: "Poppins",
       ),
