@@ -69,6 +69,7 @@ flutter:
      - lib/assets/images/
      - lib/assets/icons/
      - lib/assets/icons/clock.svg
+     - lib/assets/icons/bg.svg
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
