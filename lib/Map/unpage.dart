@@ -1,6 +1,9 @@
 import 'package:english_adventure/Drawer/Drawer.dart';
 import 'package:english_adventure/game/game.dart';
-import 'package:english_adventure/quiz/screens/quiz/quiz_screen.dart';
+import 'package:english_adventure/quiz/start.dart';
+import '../audio/audio.dart';
+import '../note/screens/note_detail.dart';
+import '../note/modal_class/notes.dart';
 import 'package:flutter/material.dart';
 
 
@@ -80,19 +83,19 @@ class _UnitpagesState extends State<Unitpages>  {
 
           Row(
             children: <Widget>[
-              Iconns(i:"Words" ,),
+              Iconns(u: u,l: l,w: w,i:"Words" ),
               SizedBox(width: 10,),
 
 
-              Iconns(i:"Note" ,),
+              Iconns(u: u,l: l,w: w,i:"Note" ,),
               SizedBox(width: 10,),
 
 
-              Iconns(i:"Games" ,),
+              Iconns(u: u,l: l,w: w,i:"Games" ,),
               SizedBox(width: 10,),
 
 
-              Iconns(i:"Quiz" ,),
+              Iconns(u: u,l: l,w: w,i:"Quiz" ,),
               SizedBox(width: 10,),
 
 
@@ -150,9 +153,14 @@ class _UnitpagesState extends State<Unitpages>  {
 }
 
 class Iconns extends StatelessWidget {
+  var u;
+  var l;
+  var w;
 
-
-  const Iconns({
+   Iconns({
+    this.u,
+    this.l,
+    this.w,
     Key key,
     @required this.i,
 
@@ -184,7 +192,7 @@ class Iconns extends StatelessWidget {
             ],
 
           ),
-          child: Iconbuilder(x: i,),
+          child: Iconbuilder(u: u,l: l,w: w,x: i,),
         ),
         Text(i,
           style: TextStyle(
@@ -204,7 +212,14 @@ class Iconns extends StatelessWidget {
 }
 
 class Iconbuilder extends StatelessWidget {
-  const Iconbuilder({
+  var u;
+  var l;
+  var w;
+
+   Iconbuilder({
+    this.u,
+    this.l,
+    this.w,
     @required this.x,
 
     Key key,
@@ -223,11 +238,18 @@ class Iconbuilder extends StatelessWidget {
       );
     }
     if(x=='Note'){
-      return Icon(Icons.note_add,
-        size: 40,
-        color: Colors.black54,
+      return IconButton(icon: Icon(Icons.note,
+          size: 40,
+          color: Colors.black54,),
+          onPressed:() {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => NoteDetail(Note('$u - $l  $w', '', 3, 0), 'Add Note')));
+          },
+
 
       );
+
+
     }
 
     if(x=='Games'){
@@ -251,7 +273,7 @@ class Iconbuilder extends StatelessWidget {
       onPressed: (){
 
         Navigator.push(context,MaterialPageRoute(builder: (context){
-          return QuizScreen();
+          return MyApp();
         }));
 
       },
@@ -282,38 +304,47 @@ class Imagec extends StatelessWidget {
             image:  AssetImage('lib/assets/un1/l$u-$l-$c.png'),
         ),),
 
-        Container(
-
-        margin: EdgeInsets.only(top: 15,left: 40,right: 40,bottom: 15),
-        padding: EdgeInsets.all(20),
-        width: 270,
-        height: 60,
-
-        decoration: BoxDecoration(
-        color: Colors.pink[100],
-        borderRadius: BorderRadius.circular(50),
-        boxShadow: [
-        BoxShadow(
-        color: Colors.black38,
-        blurRadius: 1.0,
-        offset: Offset(5, 5),
-        spreadRadius: 1.0,
-        ),
-        ],
 
 
-    ),
-    child: Center(
-    //heightFactor:0.4 ,
-    child: Text("Sound",
-    style: TextStyle(
-    letterSpacing: 2,
-    color: Colors.black54,
-    fontSize:22,
-    ),
-    ),
-    ),
-    ),
+        LocalAudio(),
+
+
+
+
+
+
+    //     Container(
+    //
+    //     margin: EdgeInsets.only(top: 15,left: 40,right: 40,bottom: 15),
+    //     padding: EdgeInsets.all(20),
+    //     width: 270,
+    //     height: 60,
+    //
+    //     decoration: BoxDecoration(
+    //     color: Colors.pink[100],
+    //     borderRadius: BorderRadius.circular(50),
+    //     boxShadow: [
+    //     BoxShadow(
+    //     color: Colors.black38,
+    //     blurRadius: 1.0,
+    //     offset: Offset(5, 5),
+    //     spreadRadius: 1.0,
+    //     ),
+    //     ],
+    //
+    //
+    // ),
+    // child: Center(
+    // //heightFactor:0.4 ,
+    // child: Text("Sound",
+    // style: TextStyle(
+    // letterSpacing: 2,
+    // color: Colors.black54,
+    // fontSize:22,
+    // ),
+    // ),
+    // ),
+    // ),
 
 
 
