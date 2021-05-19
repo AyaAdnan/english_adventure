@@ -12,22 +12,25 @@ import 'package:flutter/material.dart';
 
 
 class Units extends StatefulWidget {
+  int unname;
+
+  Units(this.unname);
   @override
-  _UnitsState createState() => _UnitsState();
+  _UnitsState createState() => _UnitsState(unname);
 }
 
 class _UnitsState extends State<Units> {
 
-int unname=1;
-int unless=1;
-
+int unname;
+int unless;
+_UnitsState(this.unname);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
 
         appBar: AppBar(
-          title: Text('Unit 1',
+          title: Text('Unit $unname',
 
             //textAlign: TextAlign.center,
           ),
@@ -93,38 +96,38 @@ int unless=1;
           child: ListView(
             children: <Widget>[
 
-              Listitem(unname: unname, unless: unless,s:'My Famiy'),
+              Listitem(unname: unname, unless: 1,s:'My Famiy',h: 3,),
               Divider(color: Colors.white, thickness: 3,),
 
 
-              Listitem(unname: unname, unless: 2,s:'Jops'),
-              Divider(color: Colors.white, thickness: 3,),
-
-
-
-              Listitem(unname: unname, unless: 3,s:'Where do they work'),
+              Listitem(unname: unname, unless: 2,s:'Jops',h: 2,),
               Divider(color: Colors.white, thickness: 3,),
 
 
 
-              Listitem(unname: unname, unless:4,s:'Our daily routine'),
+              Listitem(unname: unname, unless: 3,s:'Where do they work',h: 2,),
               Divider(color: Colors.white, thickness: 3,),
 
 
-              Listitem(unname: unname, unless: 5,s:'My Favorite jop '),
-              Divider(color: Colors.white, thickness: 3,),
 
-              Listitem(unname: unname, unless: 6,s:'Tow familes'),
-              Divider(color: Colors.white, thickness: 3,),
-
-              Listitem(unname: unname, unless: 7,s:'check my understanding'),
+              Listitem(unname: unname, unless:4,s:'Our daily routine',h:1 ,),
               Divider(color: Colors.white, thickness: 3,),
 
 
-              Listitem(unname: unname, unless: 8,s:'When I am grow up'),
+              Listitem(unname: unname, unless: 5,s:'My Favorite jop ',h: 1,),
               Divider(color: Colors.white, thickness: 3,),
 
-              Listitem(unname: unname, unless: 9,s:'Unit 1 Exam'),
+              Listitem(unname: unname, unless: 6,s:'Tow familes',h: 2,),
+              Divider(color: Colors.white, thickness: 3,),
+
+              Listitem(unname: unname, unless: 7,s:'check my understanding',h: 1,),
+              Divider(color: Colors.white, thickness: 3,),
+
+
+              Listitem(unname: unname, unless: 8,s:'When I am grow up',h: 2,),
+              Divider(color: Colors.white, thickness: 3,),
+
+              Listitem(unname: unname, unless: 9,s:'Unit 1 Exam',h: 1,),
 
             ],
 
@@ -153,17 +156,22 @@ int unless=1;
   }
 }
 
+// list of lessons s= the name of lesson
+// it will create list of one item called mulpable times
+
 class Listitem extends StatelessWidget {
   Listitem({
     @required this.unname,
     @required this.unless,
     @required this.s,
+    @required this.h,
 
   }) ;
 
   final int unname;
   final int unless;
   final String s;
+  final int h;
 
   @override
   Widget build(BuildContext context) {
@@ -184,7 +192,7 @@ class Listitem extends StatelessWidget {
       ),
       onTap:(){
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return Unitpages(o: s,un: unname,le: unless,);
+          return Unitpages(o: s,un: unname,le: unless,h: h,);
         }));
       },
     );

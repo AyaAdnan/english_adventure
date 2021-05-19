@@ -34,12 +34,12 @@ class Images extends StatelessWidget {
             onTap: () {
               if (this.name == 'one') {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return Units();
+                  return Units(1);
                 }));
               }
               else{
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return Units();
+                  return Units(2);
                 }));
               }
 

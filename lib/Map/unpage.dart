@@ -12,18 +12,19 @@ import 'package:flutter/material.dart';
 
 
 
-
+// called the paper of unit , h for how many picture in the unit paper
 
 class Unitpages extends StatefulWidget {
 
   final String o;
   final int un;
   final int le;
-  Unitpages({this.o,this.un,this.le});
+  final int h;
+  Unitpages({this.o,this.un,this.le,this.h});
 
 
   @override
-  _UnitpagesState createState() => _UnitpagesState(w:o ,u:un,l: le);
+  _UnitpagesState createState() => _UnitpagesState(w:o ,u:un,l: le,h: h);
 }
 
 
@@ -35,7 +36,8 @@ class _UnitpagesState extends State<Unitpages>  {
   final String w;
   final int u;
   final int l;
-  _UnitpagesState({this.w,this.u,this.l});
+  final int h;
+  _UnitpagesState({this.w,this.u,this.l,this.h});
 
 
 
@@ -70,13 +72,17 @@ class _UnitpagesState extends State<Unitpages>  {
 
         child:ListView(
         children: <Widget>[
-          Imagec(u: u, l: l,c: "a",),
 
+          called(un: u,le: l,o:w,h: h,),
 
-          Imagec(u: u, l: l,c: 'b',),
-
-
-          Imagec(u: u, l: l,c: 'c',),
+          //
+          // Imagec(u: u, l: l,c: "a",),
+          //
+          //
+          // Imagec(u: u, l: l,c: 'b',),
+          //
+          //
+          // Imagec(u: u, l: l,c: 'c',),
 
 
 
@@ -350,5 +356,49 @@ class Imagec extends StatelessWidget {
 
       ],
     );
+  }
+}
+
+//just called the image by the write n ;
+class called extends StatelessWidget {
+
+  final String o;
+  final int un;
+  final int le;
+  final int h;
+
+  called({this.o, this.un, this.le, this.h});
+
+  @override
+  Widget build(BuildContext context) {
+    if (h == 3) {
+      return Column(
+        children: [
+          Imagec(u: un, l: le, c: 'a'),
+          Imagec(u: un, l: le, c: 'b'),
+          Imagec(u: un, l: le, c: 'c'),
+        ],
+      );
+    }
+
+
+    if (h == 2) {
+      return Column(
+        children: [
+          Imagec(u: un, l: le, c: 'a'),
+          Imagec(u: un, l: le, c: 'b'),
+
+        ],
+      );
+    }
+
+
+    if (h == 1) {
+      return Column(
+        children: [
+          Imagec(u: un, l: le, c: 'a'),
+        ],
+      );
+    }
   }
 }
