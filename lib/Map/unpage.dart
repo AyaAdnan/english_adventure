@@ -75,15 +75,6 @@ class _UnitpagesState extends State<Unitpages>  {
 
           called(un: u,le: l,o:w,h: h,),
 
-          //
-          // Imagec(u: u, l: l,c: "a",),
-          //
-          //
-          // Imagec(u: u, l: l,c: 'b',),
-          //
-          //
-          // Imagec(u: u, l: l,c: 'c',),
-
 
 
 
@@ -279,7 +270,7 @@ class Iconbuilder extends StatelessWidget {
       onPressed: (){
 
         Navigator.push(context,MaterialPageRoute(builder: (context){
-          return MyApp();
+          return quizcall(un: u,le: l,);
         }));
 
       },
@@ -399,6 +390,25 @@ class called extends StatelessWidget {
           Imagec(u: un, l: le, c: 'a'),
         ],
       );
+    }
+  }
+}
+
+
+class quizcall extends StatelessWidget {
+
+  final int un;
+  final int le;
+  quizcall({this.un, this.le});
+
+
+  @override
+  Widget build(BuildContext context) {
+    if(un==1 && le ==1){
+      return MyApp(0,5);
+    }
+    if(un==1 && le ==2){
+      return MyApp(5,10);
     }
   }
 }

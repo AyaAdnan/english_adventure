@@ -9,12 +9,12 @@ class Result extends StatelessWidget {
 
   String get resultPhrase {
     var text;
-    if (score <5) {
+    if (score <2) {
       text = 'Fail';
 
-    } else if (score <9 && score > 5) {
+    } else if (score <2 && score >= 4) {
       text = 'Pass';
-    } else if (score == 10) {
+    } else if (score == 5) {
       text = 'Very Good ! ';
     }
     return text;
@@ -27,7 +27,7 @@ class Result extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
 
-         Text('$score/10',style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold,color: kOrange),),
+         Text('$score/5',style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold,color: kOrange),),
           Text(
             resultPhrase,
             style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold,color: kWhiteColor),

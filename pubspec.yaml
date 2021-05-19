@@ -66,12 +66,12 @@ flutter:
      - lib/assets/lock/
      - lib/assets/number/
      - lib/assets/face.jpg
-     - lib/assets/un1/
      - lib/assets/images/
      - lib/assets/icons/
      - lib/assets/icons/clock.svg
      - lib/assets/icons/bg.svg
      - assets/
+     - lib/assets/un1/
 
 
   #   - images/a_dot_burr.jpeg

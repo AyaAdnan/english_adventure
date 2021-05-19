@@ -6,18 +6,24 @@ import 'constant.dart';
 
 
 class MyApp extends StatefulWidget {
+  int _questionIndex ;
+  int to ;
+  MyApp(this._questionIndex,this.to);
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return _MyAppState();
+    return _MyAppState(_questionIndex,to);
   }
 }
 
 class _MyAppState extends State<MyApp> {
+  int _questionIndex ;
+  int to ;
+  _MyAppState(this._questionIndex,this.to);
  var color=kBlack;
 
-  int to =5 ;
-  int _questionIndex = 0;
+
+
   var _totalScore = 0;
  var lesnumber=question;
 

@@ -16,50 +16,55 @@ const kPrimaryGradient =LinearGradient(
 
 final question = const [
   {
-    'questionText': 'What\'s your favorite Color ? ',
+    // unit 1 le 1 index 0
+    'questionText': 'What\'s the meaning of Grandfather ? ',
     'answers': [
-      {'text': 'Red', 'Score': 0},
-      {'text': 'Green', 'Score': 1},
-      {'text': 'blue', 'Score': 0},
-      {'text': 'yellow', 'Score': 0}
+      {'text': 'الام', 'Score': 0},
+      {'text': 'الجد', 'Score': 1},
+      {'text': 'الجدة', 'Score': 0},
+      {'text': 'العم', 'Score': 0}
     ]
   },
   {
-    'questionText': 'What\'s your favorite Animal ? ',
+    'questionText': 'Aunt X ------ ',
     'answers': [
-      {'text': 'cat', 'Score': 1},
-      {'text': 'dog', 'Score': 0},
-      {'text': 'camel', 'Score': 0},
-      {'text': 'dolphine', 'Score': 0}
+      {'text': 'Mother', 'Score': 0},
+      {'text': 'Sister', 'Score': 0},
+      {'text': 'Grandmother', 'Score': 0},
+      {'text': 'Uncle', 'Score': 1}
     ]
   },
   {
-    'questionText': 'What\'s your favorite Teacher ? ',
+    'questionText': 'How old --- Wisam ? ',
     'answers': [
-      {'text': 'Aya', 'Score': 0},
-      {'text': 'Ayad', 'Score': 0},
-      {'text': 'Diana', 'Score': 0},
-      {'text': 'Iman', 'Score': 1}
+      {'text': 'is', 'Score': 1},
+      {'text': 'are', 'Score': 0},
+      {'text': 'you', 'Score': 0},
+      {'text': 'am', 'Score': 0}
     ]
   },
   {
-    'questionText': 'What\'s your favorite Color ? ',
+    'questionText': 'How many Sisters ---- you have ?  ',
     'answers': [
-      {'text': 'Red', 'Score': 0},
-      {'text': 'Green', 'Score': 1},
-      {'text': 'blue', 'Score': 0},
-      {'text': 'yellow', 'Score': 0}
+      {'text': 'do', 'Score': 0},
+      {'text': 'does', 'Score': 1},
+      {'text': 'he', 'Score': 0},
+      {'text': 'I', 'Score': 0}
     ]
   },
   {
-    'questionText': 'What\'s your favorite Color ? ',
+    'questionText': 'Sister X -----',
     'answers': [
-      {'text': 'Red', 'Score': 0},
-      {'text': 'Green', 'Score': 1},
-      {'text': 'blue', 'Score': 0},
-      {'text': 'yellow', 'Score': 0}
+      {'text': 'Mother', 'Score': 0},
+      {'text': 'Cousin', 'Score': 0},
+      {'text': 'Brother', 'Score': 1},
+      {'text': 'Grandfather', 'Score': 0}
     ]
   },
+
+
+  // unit 1 le 2 index 5
+
   {
     'questionText': 'What\'s your favorite Color ? ',
     'answers': [

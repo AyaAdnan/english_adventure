@@ -96,39 +96,7 @@ _UnitsState(this.unname);
           child: ListView(
             children: <Widget>[
 
-              Listitem(unname: unname, unless: 1,s:'My Famiy',h: 3,),
-              Divider(color: Colors.white, thickness: 3,),
-
-
-              Listitem(unname: unname, unless: 2,s:'Jops',h: 2,),
-              Divider(color: Colors.white, thickness: 3,),
-
-
-
-              Listitem(unname: unname, unless: 3,s:'Where do they work',h: 2,),
-              Divider(color: Colors.white, thickness: 3,),
-
-
-
-              Listitem(unname: unname, unless:4,s:'Our daily routine',h:1 ,),
-              Divider(color: Colors.white, thickness: 3,),
-
-
-              Listitem(unname: unname, unless: 5,s:'My Favorite jop ',h: 1,),
-              Divider(color: Colors.white, thickness: 3,),
-
-              Listitem(unname: unname, unless: 6,s:'Tow familes',h: 2,),
-              Divider(color: Colors.white, thickness: 3,),
-
-              Listitem(unname: unname, unless: 7,s:'check my understanding',h: 1,),
-              Divider(color: Colors.white, thickness: 3,),
-
-
-              Listitem(unname: unname, unless: 8,s:'When I am grow up',h: 2,),
-              Divider(color: Colors.white, thickness: 3,),
-
-              Listitem(unname: unname, unless: 9,s:'Unit 1 Exam',h: 1,),
-
+              called(unname),
             ],
 
 
@@ -180,13 +148,17 @@ class Listitem extends StatelessWidget {
        // margin: EdgeInsets.only(top: 5),
         padding: EdgeInsets.all(25),
         //color: Colors.blueAccent,
-        child: Text('$unname - $unless    $s',
-        style: TextStyle(
-          fontSize: 25,
-          color: Colors.white,
+        child: Align(
+          alignment: Alignment.centerLeft,
+          child: Text('$unname - $unless    $s',
+          style: TextStyle(
 
-        ),
+            fontSize: 25,
+            color: Colors.white,
 
+          ),
+
+          ),
         ),
 
       ),
@@ -196,5 +168,106 @@ class Listitem extends StatelessWidget {
         }));
       },
     );
+  }
+}
+
+
+// will called all items
+class called extends StatelessWidget {
+
+  final int unit ;
+
+  called(this.unit);
+
+
+
+  @override
+  Widget build(BuildContext context) {
+    if (unit == 1){
+      return Column(
+        children: [
+          Listitem(unname:  unit, unless: 1,s:'My Famiy',h: 3,),
+          Divider(color: Colors.white, thickness: 3,),
+
+
+          Listitem(unname:  unit, unless: 2,s:'Jops',h: 2,),
+          Divider(color: Colors.white, thickness: 3,),
+
+
+
+          Listitem(unname: unit, unless: 3,s:'Where do they work',h: 2,),
+          Divider(color: Colors.white, thickness: 3,),
+
+
+
+          Listitem(unname: unit, unless:4,s:'Our daily routine',h:1 ,),
+          Divider(color: Colors.white, thickness: 3,),
+
+
+          Listitem(unname: unit, unless: 5,s:'My Favorite jop ',h: 1,),
+          Divider(color: Colors.white, thickness: 3,),
+
+          Listitem(unname: unit, unless: 6,s:'Tow familes',h: 2,),
+          Divider(color: Colors.white, thickness: 3,),
+
+          Listitem(unname: unit, unless: 7,s:'check my understanding',h: 1,),
+          Divider(color: Colors.white, thickness: 3,),
+
+
+          Listitem(unname: unit, unless: 8,s:'When I am grow up',h: 2,),
+          Divider(color: Colors.white, thickness: 3,),
+
+          Listitem(unname: unit, unless: 9,s:'Unit 1 Exam',h: 1,),
+
+        ],
+      );
+
+    }
+
+    if (unit == 2){
+      return Column(
+      //  crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Listitem(unname:  unit, unless: 1,s:'It\'s made of ...',h: 2,),
+          Divider(color: Colors.white, thickness: 3,),
+
+
+          Listitem(unname:  unit, unless: 2,s:'At the mall',h: 1,),
+          Divider(color: Colors.white, thickness: 3,),
+
+
+
+          Listitem(unname: unit, unless: 3,s:'Can I help you?',h: 2,),
+          Divider(color: Colors.white, thickness: 3,),
+
+
+
+          Listitem(unname: unit, unless:4,s:'Opposites',h:1 ,),
+          Divider(color: Colors.white, thickness: 3,),
+
+
+          Listitem(unname: unit, unless: 5,s:'Materials ',h: 1,),
+          Divider(color: Colors.white, thickness: 3,),
+
+          Listitem(unname: unit, unless: 6,s:'My MAgazine A blog',h: 2,),
+          Divider(color: Colors.white, thickness: 3,),
+
+          Listitem(unname: unit, unless: 7,s:'check my understanding',h: 1,),
+          Divider(color: Colors.white, thickness: 3,),
+
+
+          Listitem(unname: unit, unless: 8,s:'Let’s sing',h: 2,),
+          Divider(color: Colors.white, thickness: 3,),
+
+          Listitem(unname: unit, unless: 9,s:'Unit 2 Exam',h: 1,),
+
+        ],
+      );
+
+    }
+
+
+
+
   }
 }
