@@ -63,51 +63,5 @@ final question = const [
   },
 
 
-  // unit 1 le 2 index 5
 
-  {
-    'questionText': 'What\'s your favorite Color ? ',
-    'answers': [
-      {'text': 'Red', 'Score': 0},
-      {'text': 'Green', 'Score': 1},
-      {'text': 'blue', 'Score': 0},
-      {'text': 'yellow', 'Score': 0}
-    ]
-  },
-  {
-    'questionText': 'What\'s your favorite Color ? ',
-    'answers': [
-      {'text': 'Red', 'Score': 0},
-      {'text': 'Green', 'Score': 1},
-      {'text': 'blue', 'Score': 0},
-      {'text': 'yellow', 'Score': 0}
-    ]
-  },
-  {
-    'questionText': 'What\'s your favorite Color ? ',
-    'answers': [
-      {'text': 'Red', 'Score': 0},
-      {'text': 'Green', 'Score': 1},
-      {'text': 'blue', 'Score': 0},
-      {'text': 'yellow', 'Score': 0}
-    ]
-  },
-  {
-    'questionText': 'What\'s your favorite Color ? ',
-    'answers': [
-      {'text': 'Red', 'Score': 0},
-      {'text': 'Green', 'Score': 1},
-      {'text': 'blue', 'Score': 0},
-      {'text': 'yellow', 'Score': 0}
-    ]
-  },
-  {
-    'questionText': 'What\'s your favorite Color ? ',
-    'answers': [
-      {'text': 'Red', 'Score': 0},
-      {'text': 'Green', 'Score': 1},
-      {'text': 'blue', 'Score': 0},
-      {'text': 'yellow', 'Score': 0}
-    ]
-  }
 ];

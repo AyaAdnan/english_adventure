@@ -1,6 +1,7 @@
 import 'package:english_adventure/Drawer/Drawer.dart';
 import 'package:english_adventure/game/game.dart';
 import 'package:english_adventure/quiz/start.dart';
+import 'package:english_adventure/word_page/mainofwords.dart';
 import '../audio/audio.dart';
 import '../note/screens/note_detail.dart';
 import '../note/modal_class/notes.dart';
@@ -228,9 +229,16 @@ class Iconbuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if(x=='Words'){
-      return Icon(Icons.border_color,
-      size: 40,
-        color: Colors.black54,
+      return IconButton(
+        icon: Icon(Icons.border_color,
+        size: 40,
+          color: Colors.black54,
+
+        ),
+        onPressed:() {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => WordsPage(u,l)));
+        },
 
       );
     }
