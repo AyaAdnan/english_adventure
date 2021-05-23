@@ -264,7 +264,7 @@ class Iconbuilder extends StatelessWidget {
 
       ), onPressed: (){
         Navigator.push(context,MaterialPageRoute(builder: (context){
-          return Game();
+          return MyApp2(u,l);
         }));
       }) ;
     }
@@ -311,7 +311,7 @@ class Imagec extends StatelessWidget {
 
 
 
-        LocalAudio(),
+        LocalAudio('L$u-$l-$c'),
 
 
 

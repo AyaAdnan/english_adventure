@@ -6,7 +6,8 @@ import 'package:flutter/material.dart';
 typedef void OnError(Exception exception);
 
 class LocalAudio extends StatefulWidget {
-  String path = 'disco.mp3';
+  String path ;
+  LocalAudio(this.path);
   @override
   _LocalAudio createState() =>  _LocalAudio(path);
 }
@@ -105,7 +106,7 @@ class _LocalAudio extends State<LocalAudio> {
 
     return _tab([
 
-      _btn('play', () => audioCache.play(localFilePath)),
+      _btn('play', () => audioCache.play('$localFilePath.mp3')),
       _btn('Pause', () => advancedPlayer.pause()),
 
     ]);

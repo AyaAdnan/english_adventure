@@ -1,29 +1,34 @@
-
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import 'Lists.dart';
 
 
-
-class Game extends StatelessWidget {
+class MyApp2 extends StatelessWidget {
+  int u,l;
+  MyApp2(this.u,this.l);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
       debugShowCheckedModeBanner: false,
       title: "Matching Game",
-      home: HomePage(),
+      home: HomePage(u,l),
 
     );
   }
 }
 
 class HomePage extends StatefulWidget {
+  int u,l;
+  HomePage(this.u,this.l);
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomePageState createState() => _HomePageState(u,l);
 }
 
 
 class _HomePageState extends State<HomePage> {
+  int u,l;
+  _HomePageState(this.u,this.l);
+
 
   List<ItemModel> items;
   List<ItemModel>items2;
@@ -40,13 +45,17 @@ class _HomePageState extends State<HomePage> {
   initGame(){
     gameOver = false;
     score=0;
-    items=[
-      ItemModel(icon:FontAwesomeIcons.coffee,name:"Coffee", value:"Coffee"),
-      ItemModel(icon:FontAwesomeIcons.dog,name:"dog", value:"dog"),
-      ItemModel(icon:FontAwesomeIcons.cat,name:"Cat", value:"Cat"),
-      ItemModel(icon:FontAwesomeIcons.birthdayCake,name:"Cake", value: "Cake"),
-      ItemModel(icon:FontAwesomeIcons.bus,name:"bus", value:"bus"),
-    ];
+    if(u==1 && l==1) items=itemU1L1;
+    if(u==1 && l==2) items=itemU1L2;
+    if(u==1 && l==3) items=itemU1L3;
+    if(u==1 && l==4) items=itemU1L4;
+    if(u==1 && l==5) items=itemU1L5;
+    if(u==1 && l==6) items=itemU1L6;
+    if(u==1 && l==7) items=itemU1L7;
+    if(u==1 && l==8) items=itemU1L8;
+    if(u==2 && l==1) items=itemU2L1;
+    if(u==2 && l==2) items=itemU2L2;
+
     items2 = List<ItemModel>.from(items);
     items.shuffle();
     items2.shuffle();
@@ -58,10 +67,11 @@ class _HomePageState extends State<HomePage> {
     if(items.length == 0)
       gameOver = true;
     return Scaffold(
-      backgroundColor: Color(0xFF4840B1),
+      backgroundColor: Colors.grey,
       appBar: AppBar(
         centerTitle: true,
         title: Text('Matching Game'),
+        backgroundColor: Colors.blueAccent,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
@@ -87,10 +97,9 @@ class _HomePageState extends State<HomePage> {
                           margin: const EdgeInsets.all(8.0),
                           child: Draggable<ItemModel>(
                             data: item,
-                            childWhenDragging: Icon(
-                              item.icon, color: Colors.grey,size: 50.0,),
-                            feedback: Icon(item.icon,color: Colors.teal,size: 50,),
-                            child: Icon(item.icon, color: Colors.teal, size:50,),
+                            childWhenDragging:ImageIcon(AssetImage(item.path),size: 50.0,color: Colors.grey,),
+                            feedback:  Image(image:AssetImage(item.path,),),
+                            child: Image(image:AssetImage(item.path,),),
                           ),
                         );
 
@@ -132,11 +141,13 @@ class _HomePageState extends State<HomePage> {
                             return true;
                           },
                           builder: (context, acceptedItems,rejectedItem) => Container(
+
                             color: item.accepting? Colors.red:Colors.teal,
-                            height: 50,
-                            width: 100,
+                            height: 49,
+                            width: 120,
                             alignment: Alignment.center,
-                            margin: const EdgeInsets.all(8.0),
+
+                            margin: const EdgeInsets.all(11.0),
                             child: Text(item.name, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold,
                                 fontSize: 18.0),),
                           ),
@@ -150,24 +161,32 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             if(gameOver)
-              Text("GameOver", style: TextStyle(
-                color: Colors.red,
-                fontWeight: FontWeight.bold,
-                fontSize: 24.0,
-              ),),
+              Column(
+                children: [
+                  Container(height:200,width: 200,child: Image(image: AssetImage('assets/Hands.png',),fit: BoxFit.fill,)),
+                  Text("Good Job !", style: TextStyle(
+                    color: Colors.red,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30.0,
+                  ),),
+                ],
+              ),
             if(gameOver)
               Center(
-                child: RaisedButton(
-                  textColor: Colors.white,
-                  color: Colors.pink,
-                  child: Text("New Game"),
-                  onPressed: ()
-                  {
-                    initGame();
-                    setState(() {
+                child: InkWell(
+                  child: RaisedButton(
+                    textColor: Colors.white,
+                    color: Colors.pink,
+                    child: Text("Back"),
+                    onPressed: ()
+                    {
+                      initGame();
+                      setState(() {
 
-                    });
-                  },
+                      });
+                    },
+                  ),
+                  onTap: (){},
                 ),
               )
 
@@ -182,7 +201,7 @@ class _HomePageState extends State<HomePage> {
 class ItemModel {
   final String name;
   final String value;
-  final IconData icon;
+  String path;
   bool accepting;
 
 
@@ -192,4 +211,4 @@ class ItemModel {
 
 
 
-  ItemModel({this.name, this.value, this.icon, this.accepting= false});}
+  ItemModel({this.name, this.value, this.path, this.accepting= false});}

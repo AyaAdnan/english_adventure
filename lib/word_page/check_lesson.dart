@@ -15,25 +15,25 @@ List<String> word = [
 //u1 l2 index 11
   'Jobs',
   'Engineer',
-  'IT programmer',
+  'IT Programmer',
   'Farmer',
   'Teacher',
   'Housewife',
-  'Shop assistant',
+  'Shop Assistant',
   'Nurse',
   'Bus driver',
-  'Waiter',
+  'Waiter',//
   'Doctor',
 
   //U1 L3 index 22
-  'Work',
+  'Work',//
   'Places',
-  'Office ',
-  'Building site',
+  'Office',
+  'Building Site',
   'Restaurant',
-  'Roads ',
+  'Roads',
   'Hospital',
-  'Oil refinery',
+  'Oil refinery',//
   'Home',
   'Farm',
   'Builder',
@@ -41,7 +41,7 @@ List<String> word = [
   //U1 L4 index 33
   'Daily',
   'Routine',
-  'Computer programs',
+  'Computer Programs',
   'Little',
   'Hour',
   'Days',
@@ -60,9 +60,9 @@ List<String> word = [
   'Magazine',
   'Funny',
   'Rice',
-  'Vegetables',
+  'Vegetables',//
   'Cucumbers',
-  'Paddy fields',
+  'Paddy Fields',
   'Buffalo',
   'Plant',
   'Pilot',
@@ -74,56 +74,56 @@ List<String> word = [
       //U1 L7 index 60
    'China',
   'Buffaloes',
-  'Taxi driver',
+  'Taxi Driver',
   'Baker',
   'Painter',
   'Cleaner',
   'Fireman',
   'Butcher',
   'Policeman',
-  'Football player',
+  'Football Player',
   'Fisherman',
   'Grocer',
-  'Zoo keeper',
+  'Zoo keeper',//
 
   //U1 L8 index 72
-  'Grow up',
+  'Grow Up',
   'Artist',
   'Painting',
-  'Famous ',
+  'Famous',
   'Cook',
   'Cut',
   'Knife',
   'Pharmacist',
 
   //U2 L1 index 80
-  'Glass jug',
-  'Wooden spoon',
-  'Leather boots',
-  'Metal saucepan',
-  'Rubber rain boots',
-  'Woollen sweater',
+  'Glass Jug',
+  'Wooden Spoon',
+  'Leather Boots',
+  'Metal Saucepan',//
+  'Rubber Rain Boots',//
+  'Woollen Sweater',
   'Cotton T-shirt',
-  'Denim jeans',
+  'Denim Jeans',
   'Knife',
   'Fork',
   'Spoon',
   'Shoes',
   'Gloves',
   'Dress',
-  'Pencil case',
+  'Pencil Case',
   'Bands',
   'Bottle',
   'Jacket',
 
 //U2 L2 index 101
   'Men\'s fashion',
-  'Home cooking',
+  'Home Cooking',
   'Cafe',
   'Supermarket',
-  'Play area',
-  'Women\'s fashion',
-  'Children\'s fashion',
+  'Play Area',
+  'Women\'s Fashion',
+  'Children\'s Fashion',
 ];//107
 
 List<String> trans = [

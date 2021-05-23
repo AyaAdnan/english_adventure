@@ -30,7 +30,7 @@ class Words_Card extends StatelessWidget {
                 ),
               ],
             ),
-            LocalAudio('$word'),
+            LocalAudio(Word),
           ],
         ),
       ),
