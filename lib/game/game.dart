@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'Lists.dart';
 
 
@@ -39,10 +38,11 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    initGame();
+    initGame(u,l);
   }
 
-  initGame(){
+  initGame(int u,int l){
+
     gameOver = false;
     score=0;
     if(u==1 && l==1) items=itemU1L1;
@@ -67,11 +67,12 @@ class _HomePageState extends State<HomePage> {
     if(items.length == 0)
       gameOver = true;
     return Scaffold(
-      backgroundColor: Colors.grey,
+
+      backgroundColor:Color(0xFFb44BC4),
       appBar: AppBar(
         centerTitle: true,
         title: Text('Matching Game'),
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Color(0xFF4840B1),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
@@ -79,7 +80,7 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             Text.rich(TextSpan(
                 children: [
-                  TextSpan(text: "Score: "),
+                  TextSpan(text: "Score: ",style: TextStyle(color: Colors.white, fontSize: 30.0,)),
                   TextSpan(text: "$score", style: TextStyle(
                     color: Colors.green,
                     fontWeight: FontWeight.bold,
@@ -142,13 +143,13 @@ class _HomePageState extends State<HomePage> {
                           },
                           builder: (context, acceptedItems,rejectedItem) => Container(
 
-                            color: item.accepting? Colors.red:Colors.teal,
+                            color: item.accepting? Colors.red:Colors.white,
                             height: 49,
                             width: 120,
                             alignment: Alignment.center,
 
                             margin: const EdgeInsets.all(11.0),
-                            child: Text(item.name, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold,
+                            child: Text(item.name, style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,
                                 fontSize: 18.0),),
                           ),
 
@@ -161,34 +162,77 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             if(gameOver)
-              Column(
-                children: [
-                  Container(height:200,width: 200,child: Image(image: AssetImage('assets/Hands.png',),fit: BoxFit.fill,)),
-                  Text("Good Job !", style: TextStyle(
-                    color: Colors.red,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30.0,
-                  ),),
-                ],
-              ),
-            if(gameOver)
               Center(
-                child: InkWell(
-                  child: RaisedButton(
-                    textColor: Colors.white,
-                    color: Colors.pink,
-                    child: Text("Back"),
-                    onPressed: ()
-                    {
-                      initGame();
-                      setState(() {
-
-                      });
-                    },
-                  ),
-                  onTap: (){},
+                child: Column(
+                 mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                    height: 70,
+                    ),
+                    Container(height:200,width: 200,child: Image(image: AssetImage('assets/Hands.png',),fit: BoxFit.fill,)),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Text("Good Job !", style: TextStyle(
+                      color: Colors.red,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 40.0,
+                    ),),
+                  ],
                 ),
-              )
+              ),
+            // if(gameOver)
+            //   Center(
+            //     child: InkWell(
+            //       child: Container(
+            //
+            //
+            //         //padding:EdgeInsets.only(top:41) ,
+            //         child:Container(
+            //
+            //           // margin: EdgeInsets.all(35),
+            //           // padding: EdgeInsets.all(20),
+            //           width: double.infinity,
+            //           height: 60,
+            //
+            //           decoration: BoxDecoration(
+            //             color: kOrange,
+            //             borderRadius: BorderRadius.circular(50),
+            //             boxShadow: [
+            //               BoxShadow(
+            //                 color: Colors.black38,
+            //                 blurRadius: 1.0,
+            //                 offset: Offset(5, 5),
+            //                 spreadRadius: 1.0,
+            //               )
+            //             ],
+            //           ),
+            //           child: Center(
+            //             //heightFactor:0.4 ,
+            //             child: Row(
+            //               mainAxisAlignment: MainAxisAlignment.center,
+            //               children: [
+            //                 Text("Back",
+            //                   style: TextStyle(
+            //                     color: Colors.white,
+            //                     fontSize:19,
+            //                   ),
+            //                 ),
+            //                // Icon(Icons.arrow_forward,size:19,color: kWhiteColor ,),
+            //               ],
+            //             ),
+            //           ),
+            //         ),
+            //
+            //       ),
+            //       onTap: (){
+            //         initGame(u,l);
+            //         setState(() {
+            //
+            //         });
+            //       }
+            //     ),
+             //),
 
           ],
         ),

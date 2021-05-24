@@ -102,39 +102,42 @@ class _UnitpagesState extends State<Unitpages>  {
           ),
 
 
-        Container(
+        InkWell(
+          child: Container(
 
-          margin: EdgeInsets.only(top: 15,left: 15,right: 15,bottom: 15),
-          padding: EdgeInsets.all(20),
-          width: 130,
-          height: 60,
+            margin: EdgeInsets.only(top: 15,left: 15,right: 15,bottom: 15),
+            padding: EdgeInsets.all(20),
+            width: 130,
+            height: 60,
 
-          decoration: BoxDecoration(
-              color:Color(0xFFF99E2B),
-              borderRadius: BorderRadius.circular(50),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black38,
-                blurRadius: 1.0,
-                offset: Offset(5, 5),
-                spreadRadius: 1.0,
-              ),
-            ],
-
-
+            decoration: BoxDecoration(
+                color:Color(0xFFF99E2B),
+                borderRadius: BorderRadius.circular(50),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black38,
+                  blurRadius: 1.0,
+                  offset: Offset(5, 5),
+                  spreadRadius: 1.0,
+                ),
+              ],
 
 
-          ),
-          child: Center(
-            //heightFactor:0.4 ,
-            child: Text("Done",
-              style: TextStyle(
-                letterSpacing: 3,
-                color: Colors.white,
-                fontSize:20,
+
+
+            ),
+            child: Center(
+              //heightFactor:0.4 ,
+              child: Text("Done",
+                style: TextStyle(
+                  letterSpacing: 3,
+                  color: Colors.white,
+                  fontSize:20,
+                ),
               ),
             ),
           ),
+          onTap: ()=>Navigator.pop(context),
         ),
 
 
