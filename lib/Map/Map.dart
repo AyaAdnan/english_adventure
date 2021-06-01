@@ -12,14 +12,20 @@ import 'img.dart';
 
 
 class Map extends StatefulWidget {
+  int score;
+  String name , img ;
+  Map(this.score,this.name,this.img);
 
 
 
   @override
-  _MapState createState() => _MapState();
+  _MapState createState() => _MapState(score,name,img);
 }
 
 class _MapState extends State<Map> {
+  int score;
+  String name , img ;
+  _MapState(this.score,this.name,this.img);
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -79,7 +85,7 @@ class _MapState extends State<Map> {
         backgroundColor: Color(0xFF4840B1),
         elevation: 6,
       ),
-      drawer: MyDrawer(),
+      drawer: MyDrawer(score,name,img),
       body: Container(
         //Background Color
         decoration: BoxDecoration(
@@ -104,6 +110,9 @@ class _MapState extends State<Map> {
                       platz: 0.00,
                       lockicon: false,
                       imageSize: respansv.getDeviceType(),
+                      score: score,
+                      name2: name,
+                      img: img,
                     ),
                     RedColumn(
                       top: - 0.19,
@@ -118,6 +127,9 @@ class _MapState extends State<Map> {
                       platz: -0.50,
                       lockicon:false,
                       imageSize: respansv.getDeviceType(),
+                      score: score,
+                      name2: name,
+                      img: img,
                     ),
                     RedColumn(
                       top: - 0.20,
@@ -132,6 +144,9 @@ class _MapState extends State<Map> {
                       platz: 0.50,
                       lockicon: true,
                       imageSize: respansv.getDeviceType(),
+                      score: score,
+                      name2: name,
+                      img: img,
                     ),
                     RedColumn(
                       top:  0.20 ,
@@ -140,12 +155,16 @@ class _MapState extends State<Map> {
                       bottom2: - 0.23,
                       bottom: - 0.33,
                       size: respansv.getDeviceType() / 6,
+
                     ),
                     Images(
                       name: 'four',
                       platz: -0.45,
                       lockicon: true,
                       imageSize: respansv.getDeviceType(),
+                      score: score,
+                      name2: name,
+                      img: img,
                     ),
                     RedColumn(
                       top: - 0.12,
@@ -160,6 +179,9 @@ class _MapState extends State<Map> {
                       platz: 0.80,
                       lockicon: true,
                       imageSize: respansv.getDeviceType(),
+                      score: score,
+                      name2: name,
+                      img: img,
                     ),
                     RedColumn(
                       top: 0.40 ,
@@ -174,6 +196,9 @@ class _MapState extends State<Map> {
                       platz: -0.40,
                       lockicon: true,
                       imageSize: respansv.getDeviceType(),
+                      score: score,
+                      name2: name,
+                      img: img,
                     ),
                     RedColumn(
                       top: - 0.10 ,
@@ -188,6 +213,9 @@ class _MapState extends State<Map> {
                       platz: 0.80,
                       lockicon: true,
                       imageSize: respansv.getDeviceType(),
+                      score: score,
+                      name2: name,
+                      img: img,
                     ),
                     RedColumn(
                       top:  0.50 ,
@@ -202,6 +230,9 @@ class _MapState extends State<Map> {
                       platz: -0.50,
                       lockicon: true,
                       imageSize: respansv.getDeviceType(),
+                      score: score,
+                      name2: name,
+                      img: img,
                     ),
 
                     RedColumn(
@@ -219,6 +250,9 @@ class _MapState extends State<Map> {
                       platz: 0.82,
                       lockicon: true,
                       imageSize: respansv.getDeviceType(),
+                      score: score,
+                      name2: name,
+                      img: img,
                     ),
 
 
@@ -236,6 +270,9 @@ class _MapState extends State<Map> {
                       platz: -0.20,
                       lockicon: true,
                       imageSize: respansv.getDeviceType(),
+                      score: score,
+                      name2: name,
+                      img: img,
                     ),
 
 

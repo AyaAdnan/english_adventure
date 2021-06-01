@@ -21,11 +21,14 @@ class Unitpages extends StatefulWidget {
   final int un;
   final int le;
   final int h;
-  Unitpages({this.o,this.un,this.le,this.h});
+  int score;
+  String name , img ;
+
+  Unitpages({this.o,this.un,this.le,this.h,this.score,this.name,this.img});
 
 
   @override
-  _UnitpagesState createState() => _UnitpagesState(w:o ,u:un,l: le,h: h);
+  _UnitpagesState createState() => _UnitpagesState(w:o ,u:un,l: le,h: h,score: score,name: name,img: img);
 }
 
 
@@ -38,7 +41,10 @@ class _UnitpagesState extends State<Unitpages>  {
   final int u;
   final int l;
   final int h;
-  _UnitpagesState({this.w,this.u,this.l,this.h});
+  int score;
+  String name , img ;
+
+  _UnitpagesState({this.w,this.u,this.l,this.h,this.score,this.name,this.img});
 
 
 
@@ -54,7 +60,7 @@ class _UnitpagesState extends State<Unitpages>  {
         backgroundColor: Color(0xFF4840B1),
         elevation: 6,
       ),
-      drawer: MyDrawer(),
+      drawer: MyDrawer(score,name,img),
       body:Container(
         //Background Color
         decoration: BoxDecoration(

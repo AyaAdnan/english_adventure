@@ -1,4 +1,6 @@
-import 'package:english_adventure/Login/body.dart';
+
+
+import 'package:english_adventure/Login/myhomelogin.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'Splash.dart';
@@ -23,7 +25,7 @@ class Intro extends StatelessWidget{
       ),
       routes: {
         'Load': (context){
-          return Body();
+          return MyHomePage();
         }
         ,
 

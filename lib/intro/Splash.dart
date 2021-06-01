@@ -7,17 +7,23 @@ import 'package:english_adventure/Map/Map.dart';
 
 
 class Load extends StatefulWidget {
+  int score;
+  String name , img ;
+  Load(this.score,this.name,this.img);
   @override
-  _LoadState createState() => _LoadState();
+  _LoadState createState() => _LoadState(score,name,img);
 }
 
 class _LoadState extends State<Load> {
+  int score;
+  String name , img ;
+  _LoadState(this.score,this.name,this.img);
   @override
   void initState(){
     super.initState();
     Future.delayed(Duration(seconds: 2),(){
       Navigator.of(context).pushReplacement(
-          new MaterialPageRoute(builder: (BuildContext context) => Map()));
+          new MaterialPageRoute(builder: (BuildContext context) => Map(score,name,img)));
     });
   }
 

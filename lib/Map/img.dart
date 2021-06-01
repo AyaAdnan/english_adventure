@@ -12,6 +12,9 @@ class Images extends StatelessWidget {
   final double platz;
   final bool lockicon;
   final double imageSize;
+  int score;
+  String name2 , img ;
+
 
   bool lockicon2 = true;
 
@@ -19,7 +22,10 @@ class Images extends StatelessWidget {
     @required this.name,
     @required this.platz,
     @required this.lockicon,
-    @required this.imageSize
+    @required this.imageSize,
+    this.score,
+    this.name2,
+    this.img,
   });
 
   @override
@@ -34,12 +40,12 @@ class Images extends StatelessWidget {
             onTap: () {
               if (this.name == 'one') {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return Units(1);
+                  return Units(1,score,name2,img);
                 }));
               }
               else{
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return Units(2);
+                  return Units(2,score,name2,img);
                 }));
               }
 

@@ -13,17 +13,23 @@ import 'package:flutter/material.dart';
 
 class Units extends StatefulWidget {
   int unname;
+  int score;
+  String name , img ;
 
-  Units(this.unname);
+
+  Units(this.unname,this.score,this.name,this.img);
   @override
-  _UnitsState createState() => _UnitsState(unname);
+  _UnitsState createState() => _UnitsState(unname,score,name,img);
 }
 
 class _UnitsState extends State<Units> {
 
 int unname;
 int unless;
-_UnitsState(this.unname);
+int score;
+String name , img ;
+
+_UnitsState(this.unname,this.score,this.name,this.img);
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +85,7 @@ _UnitsState(this.unname);
           backgroundColor: Color(0xFF4840B1),
           elevation: 6,
         ),
-        drawer: MyDrawer(),
+        drawer: MyDrawer(score,name,img),
         body: Container(
         //Background Color
         decoration: BoxDecoration(

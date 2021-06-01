@@ -1,8 +1,12 @@
+import 'dart:convert';
+
 import 'package:english_adventure/note/callednote.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:english_adventure/Map/Map.dart';
 import 'MyDegree.dart';
+import 'globals.dart';
+
 
 
 
@@ -12,11 +16,40 @@ import 'MyDegree.dart';
 
 
 class MyDrawer extends StatefulWidget {
+  int score;
+  String name , img ;
+ MyDrawer(this.score,this.name,this.img);
   @override
-  _MyDrawerState createState() => _MyDrawerState();
+  _MyDrawerState createState() => _MyDrawerState(score,name,img);
 }
 
 class _MyDrawerState extends State<MyDrawer> {
+
+  int score;
+  String name , img ;
+  _MyDrawerState(this.score,this.name,this.img);
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    listenforStream();
+  }
+
+  String listenforStream(){
+    imageChanged.stream.listen((onData){
+      setState(() {
+        img = onData;
+      });
+    });
+  }
+
+
+
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -43,19 +76,24 @@ class _MyDrawerState extends State<MyDrawer> {
 
                   Align(
                     alignment: Alignment(-0.7,0.6),
-                    child: CircleAvatar(
-                      //child: Image.asset('lib/assets/boy.jpg',),
-                    // backgroundColor: Colors.white70,
-                      backgroundImage: AssetImage('lib/assets/face.jpg'),
-                      radius:52,
-                    ),
+                    child:  Container(
+                        width: 100.0,
+                        height: 100.0,
+                        decoration: new BoxDecoration(
+                            shape: BoxShape.circle,
+                            image: new DecorationImage(
+                                fit: BoxFit.fill,
+                                image: img != null && img.isNotEmpty
+                                    ? Image.memory(base64Decode(img)).image
+                                    : null
+                                    ))),
 
                   ),
 
                   Image.asset('lib/assets/head.png',),
                   Align(
                     alignment: Alignment.centerRight+Alignment(-0.6, 0),
-                    child: Text("Ahmad",
+                    child: Text(name,
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20.0,
@@ -65,15 +103,15 @@ class _MyDrawerState extends State<MyDrawer> {
 
 
 
-                  Align(
-                    alignment: Alignment.centerRight+Alignment(0, 0.4),
-                    child: Text("Ahmad123@gmail.com",
-                      style: TextStyle(
-                        color: Colors.white70,
-                       // fontSize: 20.0,
-                      ),
-                    ),
-                  )
+                  // Align(
+                  //   alignment: Alignment.centerRight+Alignment(0, 0.4),
+                  //   child: Text("Ahmad123@gmail.com",
+                  //     style: TextStyle(
+                  //       color: Colors.white70,
+                  //      // fontSize: 20.0,
+                  //     ),
+                  //   ),
+                  // )
 
 
 
@@ -101,7 +139,7 @@ class _MyDrawerState extends State<MyDrawer> {
           onTap: (){
 
             Navigator.push(context,MaterialPageRoute(builder: (context){
-            return Map();
+            return Map(score,name,img);
           }));},
 
 

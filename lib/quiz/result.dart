@@ -41,7 +41,7 @@ class Result extends StatelessWidget {
     return
       Center(
         child: Column(
-          children: [ Container(height:120,width:120,child: Image(image:AssetImage(imgpath),fit: BoxFit.fill,)),
+          children: [ //Container(height:120,width:120,child: Image(image:AssetImage(imgpath),fit: BoxFit.fill,)),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
