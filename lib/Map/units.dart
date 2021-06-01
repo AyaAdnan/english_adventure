@@ -102,7 +102,7 @@ _UnitsState(this.unname,this.score,this.name,this.img);
           child: ListView(
             children: <Widget>[
 
-              called(unname),
+              called(unname,score,name,img),
             ],
 
 
@@ -139,6 +139,10 @@ class Listitem extends StatelessWidget {
     @required this.unless,
     @required this.s,
     @required this.h,
+    this.score,
+    this.name,
+    this.img
+
 
   }) ;
 
@@ -146,6 +150,8 @@ class Listitem extends StatelessWidget {
   final int unless;
   final String s;
   final int h;
+  int score;
+  String name , img ;
 
   @override
   Widget build(BuildContext context) {
@@ -170,7 +176,7 @@ class Listitem extends StatelessWidget {
       ),
       onTap:(){
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return Unitpages(o: s,un: unname,le: unless,h: h,);
+          return Unitpages(o: s,un: unname,le: unless,h: h,score: score,name: name,img: img,);
         }));
       },
     );
@@ -182,8 +188,9 @@ class Listitem extends StatelessWidget {
 class called extends StatelessWidget {
 
   final int unit ;
-
-  called(this.unit);
+  int score;
+  String name ,img;
+  called(this.unit,this.score,this.img,this.name);
 
 
 

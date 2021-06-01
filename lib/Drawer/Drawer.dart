@@ -52,6 +52,7 @@ class _MyDrawerState extends State<MyDrawer> {
 
   @override
   Widget build(BuildContext context) {
+   double size = 22;
     return Drawer(
 
 
@@ -124,6 +125,7 @@ class _MyDrawerState extends State<MyDrawer> {
          Column(
            crossAxisAlignment: CrossAxisAlignment.end,
     children: [
+      SizedBox(height: 12,),
          /*  ListTile(
 
              title: Text('الصفحة الرئيسية',textAlign: TextAlign.right,),
@@ -147,24 +149,27 @@ class _MyDrawerState extends State<MyDrawer> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children:[
+
               IconButton(color: Color(0xFFb44BC4),
-                icon: Icon(Icons.home,),
+                icon: Icon(Icons.home,size: 35,),
                 onPressed: (){},
               ),
-               Text('Home',style: TextStyle(color: Color(0xFFb44BC4),),),
+               Text('Home',style: TextStyle(color: Color(0xFFb44BC4),fontSize: size),),
 
 
-    ]
+    ],
+
           ),
         ),
       ),
+      SizedBox(height: 12,),
       Padding(
         padding: EdgeInsets.only(left: 0),
         child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children:[
               IconButton(color: Colors.black54,
-                icon: Icon(Icons.bookmark),
+                icon: Icon(Icons.bookmark,size: 35),
                 onPressed: (){
 
                   Navigator.push(context,MaterialPageRoute(builder: (context){
@@ -173,19 +178,20 @@ class _MyDrawerState extends State<MyDrawer> {
 
                 },
               ),
-              Text('My Degree',style: TextStyle(color: Colors.black54)),
+              Text('My Degree',style: TextStyle(color: Colors.black54,fontSize: size)),
 
 
             ]
         ),
       ),
+      SizedBox(height: 12,),
       Padding(
         padding: EdgeInsets.only(left: 0),
         child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children:[
               IconButton(color: Colors.black54,
-                icon: Icon(Icons.note_add),
+                icon: Icon(Icons.note_add,size: 35),
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return Notecalled();
@@ -193,52 +199,55 @@ class _MyDrawerState extends State<MyDrawer> {
                 }
 
               ),
-              Text('My Note',style: TextStyle(color: Colors.black54)),
+              Text('My Note',style: TextStyle(color: Colors.black54,fontSize: size)),
 
 
             ]
         ),
       ),
+      SizedBox(height: 12,),
       Padding(
         padding: EdgeInsets.only(left: 0),
         child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children:[
               IconButton(color: Colors.black54,
-                icon: Icon(Icons.settings),
+                icon: Icon(Icons.settings,size: 35),
                 onPressed: (){},
               ),
-              Text('Settings',style: TextStyle(color: Colors.black54)),
+              Text('Settings',style: TextStyle(color: Colors.black54,fontSize: size)),
 
 
             ]
         ),
       ),
+      SizedBox(height: 12,),
       Padding(
         padding: EdgeInsets.only(left: 0),
         child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children:[
               IconButton(color: Colors.black54,
-                icon: Icon(Icons.star_half),
+                icon: Icon(Icons.star_half,size: 35),
                 onPressed: (){},
               ),
-              Text('Rate Us',style: TextStyle(color: Colors.black54)),
+              Text('Rate Us',style: TextStyle(color: Colors.black54,fontSize: size)),
 
 
             ]
         ),
       ),
+      SizedBox(height: 12,),
       Padding(
         padding: EdgeInsets.only(left: 0),
         child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children:[
               IconButton(color: Colors.black54,
-                icon: Icon(Icons.phone),
+                icon: Icon(Icons.phone,size: 35),
                 onPressed: (){},
               ),
-              Text('Contact Us',style: TextStyle(color: Colors.black54)),
+              Text('Contact Us',style: TextStyle(color: Colors.black54,fontSize: size)),
 
 
             ]

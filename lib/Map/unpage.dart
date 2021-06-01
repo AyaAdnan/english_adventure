@@ -60,7 +60,7 @@ class _UnitpagesState extends State<Unitpages>  {
         backgroundColor: Color(0xFF4840B1),
         elevation: 6,
       ),
-      drawer: MyDrawer(score,name,img),
+      //drawer: MyDrawer(score,name,img),
       body:Container(
         //Background Color
         decoration: BoxDecoration(
