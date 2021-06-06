@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-
 import 'audioplayer.dart';
 import 'check_lesson.dart';
 

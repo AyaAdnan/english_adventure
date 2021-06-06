@@ -65,7 +65,7 @@ class _LocalAudio extends State<LocalAudio> {
     return InkWell(
       child: Icon(
         Icons.volume_up,
-        size: 80,
+        size: 40,
         color: Color(0xFF4840B1),
       ),
       onTap: onPressed,

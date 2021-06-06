@@ -2,6 +2,8 @@ import 'package:english_adventure/Drawer/Drawer.dart';
 import 'package:english_adventure/Map/unpage.dart';
 import 'package:flutter/material.dart';
 
+import 'unit_exam.dart';
+
 
 
 
@@ -175,9 +177,16 @@ class Listitem extends StatelessWidget {
 
       ),
       onTap:(){
-        Navigator.push(context, MaterialPageRoute(builder: (context) {
+        if(s=='Unit 1 Exam'){
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return unit_exam(s);
+          }));
+
+        }
+          else{Navigator.push(context, MaterialPageRoute(builder: (context) {
           return Unitpages(o: s,un: unname,le: unless,h: h,score: score,name: name,img: img,);
-        }));
+        }));}
+
       },
     );
   }

@@ -11,7 +11,6 @@ class _MydegreeState extends State<Mydegree>  {
 
   List<Degree> degreelist=[
 
-    Degree(unname: 'Abc',deg: '0'),
     Degree(unname: 'Unit 1',deg:'0'),
     Degree(unname: 'Unit 2',deg: '0'),
     Degree(unname: 'Unit 3',deg: '0'),
@@ -41,9 +40,12 @@ class _MydegreeState extends State<Mydegree>  {
 
 
 
-      body:ListView(
-        children:degreelist.map((degreelist)=>Listv(s :degreelist)).toList(),
+      body:Container(
+        color: Colors.white,
+        child: ListView(
+          children:degreelist.map((degreelist)=>Listv(s :degreelist)).toList(),
 
+        ),
       ) ,
     );
   }
@@ -82,8 +84,20 @@ class Listv extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-     // padding: EdgeInsets.all(20),
-      margin: EdgeInsets.all(22),
+      margin: EdgeInsets.only(left: 10,right: 10,bottom: 10,top: 5),
+      height: 80,
+      width: double.infinity,
+      padding: EdgeInsets.only(left: 10),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Color(0xFF4840B1),
+            Color(0xFFb44BC4),
+          ],
+          begin: FractionalOffset.topLeft,
+          end: FractionalOffset.bottomRight,
+        ),
+      ),
       child: Center(
         child: Row(
 
@@ -91,19 +105,19 @@ class Listv extends StatelessWidget {
             Text(s.unname,
             style: TextStyle(
               fontSize: 25,
-              color: Colors.pink
+              color: Colors.white
             ),
             ),
             Text('         :       ',
               style: TextStyle(
                   fontSize: 25,
-                  color: Colors.pink
+                  color: Colors.white
               ),
             ),
             Text(s.deg,
               style: TextStyle(
                   fontSize: 25,
-                  color: Colors.pink
+                  color: Colors.white
               ),
             ),
 
