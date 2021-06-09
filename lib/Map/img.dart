@@ -43,7 +43,7 @@ class Images extends StatelessWidget {
                   return Units(1,score,name2,img);
                 }));
               }
-              else{
+              if(this.name =='two' && lockicon==false ){
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return Units(2,score,name2,img);
                 }));

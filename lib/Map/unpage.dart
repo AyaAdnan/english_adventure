@@ -427,5 +427,38 @@ class quizcall extends StatelessWidget {
     if(un==1 && le ==2){
       return MyApp(5,10);
     }
+
+
+    if(un==1 && le ==3){
+      return MyApp(10,15);
+    }
+    if(un==1 && le ==4){
+      return MyApp(15,20);
+    }
+
+    if(un==1 && le ==5){
+      return MyApp(20,25);
+    }
+    if(un==1 && le ==6){
+      return MyApp(25,30);
+    }
+
+    if(un==1 && le ==7){
+      return MyApp(30,35);
+    }
+    if(un==1 && le ==8){
+      return MyApp(35,40);
+    }
+
+
+    if(un==2 && le ==1){
+      return MyApp(40,45);
+    }
+    if(un==2 && le ==2){
+      return MyApp(45,50);
+    }
+
+
+
   }
 }

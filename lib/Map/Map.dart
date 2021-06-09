@@ -14,18 +14,20 @@ import 'img.dart';
 class Map extends StatefulWidget {
   int score;
   String name , img ;
-  Map(this.score,this.name,this.img);
+  bool un2;
+  Map(this.score,this.name,this.img,this.un2);
 
 
 
   @override
-  _MapState createState() => _MapState(score,name,img);
+  _MapState createState() => _MapState(score,name,img,un2);
 }
 
 class _MapState extends State<Map> {
   int score;
   String name , img ;
-  _MapState(this.score,this.name,this.img);
+  final bool un2;
+  _MapState(this.score,this.name,this.img,this.un2);
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -68,7 +70,7 @@ class _MapState extends State<Map> {
              Align(
                alignment: Alignment(-0.4, 0.5),
 
-               child: Text("0x"),
+               child: Text("  $score x    "),
 
              ),
 
@@ -125,7 +127,7 @@ class _MapState extends State<Map> {
                     Images(
                       name: 'two',
                       platz: -0.50,
-                      lockicon:false,
+                      lockicon:un2,
                       imageSize: respansv.getDeviceType(),
                       score: score,
                       name2: name,

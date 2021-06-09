@@ -23,7 +23,7 @@ class _LoadState extends State<Load> {
     super.initState();
     Future.delayed(Duration(seconds: 2),(){
       Navigator.of(context).pushReplacement(
-          new MaterialPageRoute(builder: (BuildContext context) => Map(score,name,img)));
+          new MaterialPageRoute(builder: (BuildContext context) => Map(score,name,img,true)));
     });
   }
 

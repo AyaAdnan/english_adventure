@@ -2,6 +2,7 @@ import 'package:english_adventure/Login/constants.dart';
 import 'package:english_adventure/Login/text_field_container.dart';
 import 'package:flutter/material.dart';
 import 'audio.dart';
+import 'score.dart';
 
 
 
@@ -19,7 +20,40 @@ class unit_examState extends State<unit_exam> {
   var nameController2 = new TextEditingController();
   var nameController3 = new TextEditingController();
   var nameController4 = new TextEditingController();
-  var Score=0;
+  var nameController5 = new TextEditingController();
+  int X=0;
+  int Score=0;
+  String pass;
+
+  int getscore(){
+    if( nameController.text == 'الجد') Score++;
+    if( nameController2.text == 'Teacher') Score++;
+    if( nameController3.text == 'How many') Score++;
+    if( nameController4.text == 'Fork') Score++;
+    if( nameController5.text == 'Wants') Score++;
+    setState(() {
+      X=Score;
+    });
+    //print(X);
+    return(X);
+
+  }
+
+  String getpassing(X){
+
+    if(X == 0) pass='Fail !' ;
+    if(X == 1) pass='Fail !' ;
+    if(X == 2) pass='Fail !' ;
+    if(X == 3) pass='GOOD !' ;
+    if(X == 4) pass='Very Good!' ;
+    if(X == 5) pass='Excellent!' ;
+
+    //print(X);
+    return(pass);
+
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,7 +81,63 @@ class unit_examState extends State<unit_exam> {
             Divider(thickness: 2,color: Colors.white,),
             Quistion_ans("----- Sisters do you have ?",nameController3,"(How much , How many , How old , why"),
             Divider(thickness: 2,color: Colors.white,),
-            voicecall('Write what you here', nameController4,'Fork')
+            voicecall('Write what you here', nameController4,'Fork'),
+            Divider(thickness: 2,color: Colors.white,),
+            Quistion_ans("She ------ to be A Doctor",nameController5,"(wants , Wanting , want , wanted"),
+            Divider(thickness: 2,color: Colors.white,),
+
+
+            InkWell(
+              child: Container(
+
+                margin: EdgeInsets.only(top: 15,left: 15,right: 15,bottom: 15),
+                padding: EdgeInsets.all(20),
+                width: 130,
+                height: 60,
+
+                decoration: BoxDecoration(
+                  color:Color(0xFFF99E2B),
+                  borderRadius: BorderRadius.circular(50),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black38,
+                      blurRadius: 1.0,
+                      offset: Offset(5, 5),
+                      spreadRadius: 1.0,
+                    ),
+                  ],
+
+
+
+
+                ),
+                child: Center(
+                  //heightFactor:0.4 ,
+                  child: Text("Done",
+                    style: TextStyle(
+                      letterSpacing: 3,
+                      color: Colors.white,
+                      fontSize:20,
+                    ),
+                  ),
+                ),
+              ),
+              onTap: (){
+              X= getscore();
+              pass=getpassing(X);
+              print(X);
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return Scorepage(score: X,passing: pass,);
+              }));
+
+
+                // Navigator.push(context,
+                //     MaterialPageRoute(builder: (context) => Scorepage(X)));
+              },
+            ),
+
+
+
 
             //
             // FlatButton(onPressed: (){
@@ -174,7 +264,8 @@ class Quistion_ans extends StatelessWidget {
   var nameController3 = new TextEditingController();
   String Q;
   String A;
-  Quistion_ans(this.Q,this.nameController3,this.A);
+  var nameCont = new TextEditingController();
+  Quistion_ans(this.Q,this.nameCont,this.A);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -191,7 +282,7 @@ class Quistion_ans extends StatelessWidget {
           SizedBox(height: 15,),
 
           RoundedInputField(
-            name: nameController3,
+            name: nameCont,
             hintText: "Answer Here",
           ),
 

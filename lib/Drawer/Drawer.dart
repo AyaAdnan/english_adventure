@@ -114,7 +114,7 @@ class _MyDrawerState extends State<MyDrawer> {
               child: InkWell(
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return Map(score, name, img);
+                    return Map(score, name, img,false);
                   }));
                 },
                 child: Row(
